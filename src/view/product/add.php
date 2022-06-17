@@ -1,18 +1,19 @@
 <main class="container mt-4 bg-light border border-dark rounded p-5">
     <h1>Adicionar produto</h1>
     <hr>
-
+    
     <div class="row align-items-center">
+        <a href="/categorias/adicionar" class="btn btn-sm m-4 p-3 border border-dark border-sm shadow float-end" style="background: linear-gradient(180deg, rgba(255,252,31,1) 0%, rgba(255,200,0,1) 100%);" type="button">Adicionar categoria</a>    
         <div class="col-6 p-3 border-end border-dark">
             <form action="" method="post">
                 <div class="form-floating mb-3">
                     <select class="form-select" id="floatingSelect" name="category_id">
                         <option selected> -- Escolha uma --</option>
                         <?php
-                            while ($category = $data->FETCH(\PDO::FETCH_ASSOC) ) {
-                                echo "<option value='{$category['id']}'>{$category['name']}</option>";
-                            }
-                        ?>
+while ($category = $data->FETCH(\PDO::FETCH_ASSOC)) {
+    echo "<option value='{$category['id']}'>{$category['name']}</option>";
+}
+?>
                     </select>
                         <label for="floatingSelect">Escolha a categoria do produto</label>
                 </div>
